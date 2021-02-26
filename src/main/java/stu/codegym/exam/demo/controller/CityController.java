@@ -14,6 +14,7 @@ import stu.codegym.exam.demo.service.CityService;
 import stu.codegym.exam.demo.service.CountryService;
 
 @Controller
+@RequestMapping
 public class CityController {
     @Autowired
     private CityService cityService;
@@ -48,7 +49,7 @@ public class CityController {
 
     @GetMapping("/edit")
     public ModelAndView editForm(@RequestParam Long id){
-        return new ModelAndView("edit", "editCity",cityService.findById(id))
+        return new ModelAndView("edit", "editCity",cityService.findById(id).get())
                 .addObject("countries",countryService.findAll());
     }
 

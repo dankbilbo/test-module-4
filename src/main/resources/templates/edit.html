@@ -9,7 +9,7 @@
     <table>
         <tr>
             <td>Name</td>
-            <td><input type="text" name="name" th:field="*{name}" th:text="${edit}"></td>
+            <td><input type="text" name="name" th:field="*{name}" th:value="${editcity.name}"></td>
         </tr>
         <tr>
             <td>Country</td>
@@ -19,19 +19,19 @@
         </tr>
         <tr>
             <td>Area</td>
-            <td><input type="number" name="area" th:field="*{area}"></td>
+            <td><input type="number" name="area" th:field="*{area}" th:value="${editCity.area}"></td>
         </tr>
         <tr>
             <td>Population</td>
-            <td><input type="number" name="population" th:field="*{population}"></td>
+            <td><input type="number" name="population" th:field="*{population}" th:value="${editcity.population}"></td>
         </tr>
         <tr>
             <td>GDP</td>
-            <td><input type="number" name="gdp" th:field="*{gdp}"></td>
+            <td><input type="number" name="gdp" th:field="*{gdp}" th:value="${editCity.gdp}"></td>
         </tr>
         <tr>
             <td>Description</td>
-            <td><textarea name="desc"  cols="30" rows="10" th:field="*{description}"></textarea></td>
+            <td><textarea name="desc"  cols="30" rows="10" th:field="*{description}" th:value="${editCity.description}"></textarea></td>
         </tr>
         <tr colspan="2">
             <button type="submit"></button>

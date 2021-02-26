@@ -55,14 +55,15 @@ public class CityController {
     @PostMapping("/edit")
     public ModelAndView edit(@Validated @ModelAttribute City city, BindingResult bindingResult){
         if (bindingResult.hasFieldErrors()){
-            return new ModelAndView("edit","editcity",city).addObject("countries",countryService.findAll());
+            return new ModelAndView("edit","editcity",city)
+                    .addObject("countries",countryService.findAll());
         }
         cityService.save(city);
         return new ModelAndView();
     }
     @GetMapping("/delete")
     public String delete(@RequestParam Long id){
-        return "/home";
+        return "home";
     }
 //    @GetMapping("/search")
 //    public ModelAndView searchByName(@RequestParam String name){
